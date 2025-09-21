@@ -4,7 +4,6 @@ const closeBtn = document.querySelector('.mobile-menu-close');
 const backdrop = document.querySelector('.backdrop');
 const modalCloseBtn = document.querySelector('.modal-close');
 
-// Мобильное меню
 burgerBtn.addEventListener('click', () => {
   mobileMenu.classList.add('is-open');
 });
@@ -19,7 +18,6 @@ mobileMenu.addEventListener('click', e => {
   }
 });
 
-// Попап (делегирование)
 document.addEventListener('click', e => {
   if (e.target.classList.contains('open-popup')) {
     backdrop.classList.add('is-open');
@@ -31,7 +29,6 @@ document.addEventListener('click', e => {
   }
 });
 
-// Валидация формы
 function validateForm(form) {
   const name = form.querySelector('input[name="name"]').value.trim();
   const email = form.querySelector('input[name="email"]').value.trim();
@@ -50,7 +47,6 @@ function validateForm(form) {
   return true;
 }
 
-// Обработка всех форм через делегирование
 document.addEventListener('submit', e => {
   const form = e.target;
   if (form.tagName === 'FORM') {
